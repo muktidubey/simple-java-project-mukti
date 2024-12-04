@@ -4,8 +4,9 @@ EXPOSE 8080
  
 ENV APP_HOME /usr/src/app
 
-COPY  /var/lib/jenkins/workspace/demo-project/target/dependency $APP_HOME/app.jar
+COPY target/*.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
-CMD ["catalina.sh", "run"]
+CMD ["catalina.sh", "app.jar"]
+
